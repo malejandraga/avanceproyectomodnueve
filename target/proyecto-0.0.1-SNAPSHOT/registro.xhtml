@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough" >
+<h:head>
+	<title>Registro</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:graphicImage url="#{resource['images:duke.waving.gif']}"
+			alt="Duke moviendo su mano" />
+		<h2>Registro</h2>
+
+		<label>id: <h:inputText value="#{interesado.id}" />
+		</label>
+		<label>Nombres: <h:inputText p:required="required"  value="#{interesado.nombres}" />
+		</label>
+		<label>Apellidos: <h:inputText p:required="required"  value="#{interesado.apellidos}" />
+		</label>
+		<label>Usuario: <h:inputText p:required="required"  value="#{interesado.usuario}" />
+		</label>
+		<label>Contraseña: <h:inputText p:type="password" p:required="required"  
+				value="#{interesado.contrasenia}" />
+		</label>
+		<p></p>
+		<h:commandButton id="acceso" value="Registrar"
+			action="#{interesado.registro}" />
+		
+	</h:form>
+
+
+</h:body>
+</html>

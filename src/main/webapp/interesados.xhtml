@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Usuarios</title>
+</h:head>
+<h:body>
+
+
+	<h:form>
+		<h2>Bienvenido</h2>
+		<h4>
+			<output> #{interesado.nombres} #{interesado.apellidos} </output>
+		</h4>
+
+
+		<h:dataTable id="iteresados" value="#{interesado.bd.interesados}"
+			var="inter" border="1" summary="Lista de candidatos">
+			<h:column>
+				<f:facet name="header">
+				Id
+			</f:facet>
+				<h:outputText value="#{inter.id}" />
+
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+				Nombres
+			</f:facet>
+				<h:outputText value="#{inter.nombres}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+				Apellidos
+			</f:facet>
+				<h:outputText value="#{inter.apellidos}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+				Usuario
+			</f:facet>
+				<h:outputText value="#{inter.usuario}" />
+			</h:column>
+
+		</h:dataTable>
+
+
+		<br />
+		<br />
+		<h:commandLink id="inicio" value="Inicio" action="index" />
+		<br />
+		<br />
+		<h:commandLink id="admin" value="[Administracion]" action="administracion" />
+	</h:form>
+
+</h:body>
+</html>
+
